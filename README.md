@@ -50,6 +50,19 @@ cp .env.example .env   # set EXPO_PUBLIC_API_BASE_URL to your API Gateway URL
 npx expo run:ios        # or: npx expo run:android
 ```
 
+## EAS
+
+Project is linked to `@spider-calvin/VitalMesh` on EAS.
+
+```bash
+npx eas-cli build --profile development --platform ios   # or android
+npx eas-cli update --branch production                    # push OTA update
+```
+
+Push notification tokens are registered via `lib/push.ts`
+(`registerForPushNotificationsAsync`), using the `expo-notifications` plugin
+configured in `app.json`.
+
 ## Backend
 
 This repo is the mobile client only. It expects an API Gateway + Lambda
